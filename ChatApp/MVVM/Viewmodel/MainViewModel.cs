@@ -13,6 +13,16 @@ namespace ChatApp.MVVM.Viewmodel
         public ObservableCollection<MessageModel> Messages { get; set; }
         public ObservableCollection<ContactModel> Contacts { get; set; }
 
+        public ContactModel SelectedContact { get; set; }
+
+        private string _message;
+
+        public string Message
+        {
+            get { return _message; }
+            set { _message = value; }
+        }
+
         public MainViewModel()
         {
             Messages = new ObservableCollection<MessageModel>();

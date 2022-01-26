@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="MVVM\View\" />
-    <Folder Include="Core\" />
     <Folder Include="Icons\" />
   </ItemGroup>
 
