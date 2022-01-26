@@ -27,8 +27,67 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.ColumnSpan="2">
+        <Border Grid.ColumnSpan="2"
+                Background="#252525"
+                MouseDown="Border_MouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="Chat App 0.1"
+                       Foreground="#FF0C00"
+                       FontWeight="SemiBold"/>
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+                    <Button Width="20" Height="20"
+                            Content="_"
+                            Background="Transparent"
+                            BorderThickness="0" 
+                            Foreground="gray"
+                            FontWeight="ExtraBold"
+                            Margin="0,0,0,3"
+                            Click="ButtonMinimize_Click"/>
+
+                    <Button Width="20" Height="20"
+                            Content="☐"
+                            Background="Transparent"
+                            BorderThickness="0" 
+                            Foreground="gray"
+                            FontWeight="Bold"
+                            Click="WindowStateButton_Click"/>
+
+                    <Button Width="20" Height="20"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0" 
+                            Foreground="gray"
+                            FontWeight="Bold"
+                            Click="CloseButton_Click"/>
+
+                </StackPanel>
+            </Grid>
             
         </Border>
+
+        <Grid Background="#2f3136"
+              Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Contacts"
+                   VerticalAlignment="Center"
+                   FontWeight="Medium"
+                   Foreground="#0074FF"
+                   Margin="8,0,0,0"/>
+
+            <ListView ItemsSource="{Binding Contacts}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      Grid.Row="1"
+                      ItemContainerStyle="{StaticResource ContactCard}"/>
+        </Grid>
     </Grid>
 </Window>
